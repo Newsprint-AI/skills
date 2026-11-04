@@ -4,7 +4,7 @@ description: Write or fix a press release or announcement. Gets the facts first,
 license: MIT
 metadata:
   author: Newsprint (https://www.newsprint.com)
-  version: "2.1.0"
+  version: "2.2.0"
   last-reviewed: "2026-11"
   origin: Write Release, the free press release writer Newsprint ran from 2023 to 2026
 ---
@@ -169,7 +169,8 @@ draft cannot go out until the brackets are filled.
   company's past releases. A quote gives a view or a reason; it does not repeat
   the facts. Keep the speaker's whole thought and their sharpest line; do not
   cut a view down to its first half. Make one sentence short enough to lift
-  alone. No puff words, and no number that is not elsewhere in the release.
+  alone. No stock phrases (Step 4), and no number that is not elsewhere in the
+  release.
   List any factual claim in a quote under facts to check.
 - **Every quote is a draft until its speaker approves the exact words in
   writing.** A quote for someone at another organization also needs that
@@ -178,7 +179,7 @@ draft cannot go out until the brackets are filled.
 
 ## Step 4: Write it, then hand it back
 
-You know how to write a good release. Hold to two things:
+You know how to write a good release. Hold to three things:
 
 - **Facts:** use only what Steps 2 and 3 allow.
 - **Tone:** the tone the user asked for (question 13). If they did not say,
@@ -186,6 +187,16 @@ You know how to write a good release. Hold to two things:
   Put their focus and key messages (question 14) first, as far as the facts and
   the speakers' views support them. A key message is not a fact: never state
   one that the facts do not back.
+- **No stock phrases**, in the text or in any quote: no one is "excited",
+  "thrilled", "pleased" or "proud" to announce anything, and nothing is
+  "leading", "innovative", "cutting-edge", "game-changing", "seamless",
+  "robust", "world-class" or "unprecedented". Avoid "leverage", "streamline",
+  "empower", "unlock" and "revolutionize". Say what the thing does instead.
+  This bans the promotional use only: a name, a sourced ranking, or a literal
+  use such as "the leading cause" is fine. Never change a quote the user
+  supplied or a speaker approved, or the boilerplate as given: keep the words,
+  flag the phrase in **Before you send**, and offer a plainer version for
+  approval.
 
 Include the standard parts: `FOR IMMEDIATE RELEASE` or the embargo line, a
 headline, the dateline, `About {Company}` with the boilerplate exactly as given,
