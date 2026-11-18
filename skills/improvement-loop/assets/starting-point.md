@@ -1,7 +1,7 @@
 # Starting point
 
-Set on the first run. Each weekly review reads this file and reports what
-moved. Never delete a row; add a dated note instead.
+Set on the first run. Each round of the loop reads this file and reports
+what moved. Never delete a row; add a dated note instead.
 
 Counts, groups and roles only: no message text, quotes, email addresses or
 other people's personal details.

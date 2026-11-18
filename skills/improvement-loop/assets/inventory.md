@@ -13,7 +13,7 @@ Last updated: YYYY-MM-DD
 
 Update checks: all pages / launches.md only
 
-Off-limits for the review:
+Off-limits:
 
 -
 
