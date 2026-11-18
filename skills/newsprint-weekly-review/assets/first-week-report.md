@@ -1,35 +1,43 @@
-# First audit: <name>, <start date> to <end date>
+# First audit: <start date> to <end date>
 
-Sources read, with your yes: calendar / mail / chat / files / transcripts
-Not available: <source>: <why>
-Skipped as private or off-limits: <number> items, about <hours> hours
+Read, with your yes (listings only, no content): <calendar / mail / chat / files / transcripts / my own record>
+Not allowed by you: <source>
+Could not reach: <source>: <why>
+Skipped as private or off-limits: <number> items
 
 Counts and groups only. People appear by role, not by name, unless you need
-the name to act. No message text or transcript quotes.
+the name to act. No subject lines, file names, message text or transcript
+quotes.
 
-This first run is new and has not been tested with real users. The time map
-is an estimate from what your tools record.
+This first run is new. It has been tested only once, on an agent's own
+account. The time map is an estimate from what your tools record.
 
 ## Where the time went
 
-About hours per week. Estimates from what the tools record.
+Hours per week where the calendar or you gave time; counts elsewhere.
 
-| Group | Hours per week | Notes |
-|---|---|---|
-| Meetings: internal | | |
-| Meetings: client or customer | | |
-| Meetings: one-to-one | | |
-| Meetings: recurring | | |
-| Email and chat | | |
-| Document work | | |
-| Recurring tasks | | |
-| Travel and gaps | | |
-| Private, skipped | | |
-| Not known | | |
+| Group | Hours per week, or "not known" | Counts | Notes |
+|---|---|---|---|
+| Meetings: internal | | | |
+| Meetings: client or customer | | | |
+| Meetings: one-to-one | | | |
+| Meetings: recurring | | | |
+| Mail from people | | | |
+| Mail from machines | | | |
+| Chat | | | |
+| Document work | | | |
+| Recurring tasks | | | |
+| Travel and gaps | | | |
+| Private or off-limits, skipped | | | |
+| Not known | | | |
 
 Repeated work (counts only):
 
 - <what>: <how often>
+
+Your answers about your time:
+
+1. <Day, time>: <your answer, or "not known">
 
 ## Your level today
 
@@ -39,8 +47,8 @@ point, not a grade. Evidence: <what I saw and what you told me>.
 ## What is connected and what is not
 
 - Connected: <systems>
-- Connector available, not connected: <systems>
-- No connector, or check: <systems>
+- Can be connected, not connected: <systems>
+- No way to connect, or check: <systems>
 
 ## Your blockers
 
@@ -53,20 +61,20 @@ Level 3: add a schedule or trigger.> For you: <the one concrete step>.
 
 ## What I could take over
 
+Ranked by <hours saved / count>.
+
 1. **<What it is>.**
    Evidence: <counts>.
    How I would do it: I prepare <...>; you approve <...>.
-   What it needs: <access or tool>; you have it: yes / no.
+   What it needs: <access or tool>; I have it: yes / no. Steps only you take:
+   <a change to your mailbox, files or another system, or "none">.
    Setup effort: minutes / hours / needs your IT person.
 
-## Questions about your time
+## Pick one, and check my tool list
 
-1. <Day, time>: no meetings and little mail. What was that?
+Reply with the number of the one you want me to start on, or "none".
+Picking one changes nothing yet: I will show you each change first and wait
+for your yes. Each week I report whether the project worked and whether your
+blockers moved.
 
-## Pick one
-
-Reply with the number of the one you want me to start on. Picking one
-changes nothing yet: I will show you each change first and wait for your yes.
-Then I set up my tool list for the weekly review, and each week I report
-whether the project worked and whether your blockers moved. I can also show
-you how to schedule the review; you set it up or approve it.
+Is this tool list right? <tools>. Tell me what to add or remove.

@@ -33,7 +33,9 @@ Three rules hold the whole time:
 ## Your files
 
 Keep everything in one folder, `weekly-review/`, in your workspace or wherever
-the user chooses. Copy the files in `assets/` there on the first run.
+the user chooses. At the start of the first run, copy only `inventory.md`,
+`starting-point.md` and `log.md` from `assets/` into it. Do not copy
+`first-week-report.md`: it is the shape of the first report, used in place.
 
 - `weekly-review/inventory.md`: where your record lives, the sources the user
   allowed you to read, and the tools you use.
@@ -51,27 +53,33 @@ ask them to attach both next week.
 
 - **By hand:** the user says "run my weekly review".
 - **Every week:** suggest the user schedule it with the host's own scheduler,
-  for example Monday at 8:00. Do not create the schedule yourself. Say how,
-  if you know the host, and let the user do it or approve it.
+  for example Monday at 8:00. Say how, if you know the host. A schedule is a
+  change like any other: create it only after the user's yes to that exact
+  schedule (Step 6), or let the user set it up.
 - One run takes one sitting. If a step fails (a page will not load, a log is
   missing), say so in the report and carry on.
 
 ## First run: the audit, then Step 0
 
 If `weekly-review/` has no `reports/` folder yet, this is a first run. Read
-`references/first-run.md` and follow it, in its order: ask, read and map,
-report and pick, then Step 0 below. Do not start Step 0 before the user has
-seen the audit report. Weekly Steps 1 to 6 start with the next run, unless
-the user asks to run them now.
+`references/first-run.md` and follow it, in its order. It asks the user at
+most three times and ends with Step 0 below, whether or not the user picks a
+project. Do not start Step 0 before the user has seen the audit report.
+Weekly Steps 1 to 6 start with the next run, unless the user asks to run them
+now.
 
 When the user says "study my week", "audit my work" or "where does my time
 go", run the audit again from `references/first-run.md`, without Step 0.
 
 ## Step 0: Set up your files
 
-Run this at the end of the first run, after the user picks a project. If
-`weekly-review/inventory.md` does not exist, set it up. Ask the user, in one
-message, only the questions the audit did not already answer:
+Run this at the end of the first run, after the user answers "Pick one" or
+leaves it unanswered. If the user picks no candidate, log each one as "no
+answer", say that no project is set, and still run Step 0.
+
+On a first run the audit has already asked everything below. Ask nothing
+new: build `inventory.md` from the audit's answers. Ask these questions, in
+one message, only when `inventory.md` is missing on a later run:
 
 1. Where is the record of my work? For example: a task list, chat history or
    transcripts, a git repository, a ticket system, a sent-mail or drafts
@@ -85,7 +93,9 @@ message, only the questions the audit did not already answer:
 Then build `inventory.md` from the answers, the audit, **and** from evidence:
 tools named in your own setup (model, runtime, connected tools, skills) and
 tools that show up in the record. Show the user the list and ask them to
-confirm or fix it.
+confirm or fix it (on a first run, the audit report already asks this). The
+"Newsprint page" and "Vendor updates page" columns stay empty until the first
+weekly run fills them in Step 3. That is expected.
 
 ## Step 1: Read last week first
 
@@ -97,8 +107,7 @@ Open `log.md` and `starting-point.md`. Note:
 - suggestions **accepted**: check in Step 2 whether each one helped;
 - the user's level and each **open blocker** in `starting-point.md`.
 
-The review window runs from the last report's date to today. On a first run,
-use the last 7 days.
+The review window runs from the last report's date to today.
 
 ## Step 2: Review the week, from the record
 
@@ -269,6 +278,10 @@ You write your own files (`inventory.md`, `log.md`, `starting-point.md`,
 `reports/` and `backups/`) only in the user's `weekly-review/` folder. They
 hold counts, groups, roles and pointers to the record, never message text,
 quotes, email addresses or other people's personal details.
+
+On the first run you may also keep raw listings (mail headers, file lists) in
+a temporary folder outside `weekly-review/`, never a shared or synced one.
+Delete it at the end of the run (`references/first-run.md`).
 
 ## The report
 
