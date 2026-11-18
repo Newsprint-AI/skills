@@ -5,7 +5,7 @@ Free [Agent Skills](https://agentskills.io/specification) from [Newsprint](https
 | Skill | What it does |
 |---|---|
 | [write-release](skills/write-release/) | Interviews you for the facts, matches your past releases' tone, then writes a press release that reporters can use and AI answer engines can quote. It never invents facts or figures, and it drafts quote options for each speaker to approve. [About this skill](https://www.newsprint.com/skills/write-release/) |
-| [newsprint-weekly-review](skills/newsprint-weekly-review/) | Helps your agent get better at your work. The first run audits where your time goes and how you use AI, reading only the sources you allow, and offers up to five things it could take over. Then, once a week, it reviews its own work and what changed in the software you use, and suggests up to five improvements with the evidence for each. It changes nothing without your yes, and it sends nothing about your work to Newsprint or anyone else. [About this skill](https://www.newsprint.com/skills/newsprint-weekly-review/) |
+| [improvement-loop](skills/improvement-loop/) | Puts your agent in a loop of getting better at your work. The first run audits where your time goes and how you use AI, reading only the sources you allow, and offers up to five things it could take over. Then, once a week, it checks its own work and what changed in the software you use, and suggests up to five improvements with the evidence for each. It changes nothing without your yes, and it sends nothing about your work to Newsprint or anyone else. [About this skill](https://www.newsprint.com/skills/improvement-loop/) |
 
 ## Install
 
@@ -13,7 +13,7 @@ With the [skills CLI](https://skills.sh), name the skill you want:
 
 ```
 npx skills add Newsprint-AI/skills --skill write-release
-npx skills add Newsprint-AI/skills --skill newsprint-weekly-review
+npx skills add Newsprint-AI/skills --skill improvement-loop
 ```
 
 Or paste this into your agent, with the skill's name in place of `<skill>`:
