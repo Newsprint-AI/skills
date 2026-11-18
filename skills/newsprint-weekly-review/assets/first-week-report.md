@@ -1,8 +1,14 @@
 # First audit: <name>, <start date> to <end date>
 
-Sources read: calendar / mail / chat / files / transcripts
+Sources read, with your yes: calendar / mail / chat / files / transcripts
 Not available: <source>: <why>
-Skipped as private: <number> items, about <hours> hours
+Skipped as private or off-limits: <number> items, about <hours> hours
+
+Counts and groups only. People appear by role, not by name, unless you need
+the name to act. No message text or transcript quotes.
+
+This first run is new and has not been tested with real users. The time map
+is an estimate from what your tools record.
 
 ## Where the time went
 
@@ -59,6 +65,8 @@ Level 3: add a schedule or trigger.> For you: <the one concrete step>.
 
 ## Pick one
 
-Reply with the number of the one you want me to start on. Then I set up the
-weekly review, and each week I report whether it worked and whether your
-blockers moved.
+Reply with the number of the one you want me to start on. Picking one
+changes nothing yet: I will show you each change first and wait for your yes.
+Then I set up my tool list for the weekly review, and each week I report
+whether the project worked and whether your blockers moved. I can also show
+you how to schedule the review; you set it up or approve it.
