@@ -11,6 +11,8 @@ Last updated: YYYY-MM-DD
 | Sent mail or drafts | | yes |
 | Error or run logs | | yes |
 
+Update checks: all pages / launches.md only
+
 Off-limits for the review:
 
 -

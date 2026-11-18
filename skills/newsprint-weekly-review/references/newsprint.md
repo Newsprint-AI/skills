@@ -7,14 +7,15 @@ key, and is free to read (CC BY 4.0). Make plain GET requests only.
 
 Newsprint records software companies by **segment**. It covers two kinds:
 
-**Checked every week (the launch record).** Every confirmed launch is dated
-and sourced, usually within a week of shipping.
+**The launch record, added to each week.** Every confirmed launch is dated
+and sourced. Most appear one to two weeks after they ship; some take a month
+or more.
 
 - PR software: suites, media monitoring, media databases and outreach, press
   release distribution, journalist requests, podcast booking, measurement,
   AI PR assistants.
 - AI visibility: tools that track or change how brands appear in AI answers.
-- Sales compensation and commissions (a small set).
+- Sales compensation and commissions (a small set of launches).
 
 **Read once, then again from time to time.** Each segment's companies carry a
 handful of dated AI launches and events since May 2025. They are not checked
@@ -33,19 +34,20 @@ match it to a tool.
 
 Newsprint has no pages for general business and office software, AI chat
 assistants or agent runtimes. As of this check that includes OpenAI and
-ChatGPT, Anthropic and Claude, Google Workspace, Microsoft 365, Slack, Zoom
-Workplace, Notion, Asana, QuickBooks, Xero, Mailchimp, Shopify (the store
-platform), Zendesk, DocuSign and Dropbox. Microsoft appears only as Dynamics
-365 and Viva; Google only as Search Console. For these, use the vendor's own
-release notes (Step 4b).
+ChatGPT, Anthropic and Claude, Google Gemini, Google Workspace, Microsoft
+365, Slack, Notion, Asana, QuickBooks, Xero, Mailchimp, Zendesk, DocuSign and
+Dropbox. Microsoft appears only as Dynamics 365, Viva and Bing Webmaster
+Tools; Google only as Search Console; Zoom only as Zoom Revenue Accelerator;
+Shopify only as Shopify Collabs. For these, use the vendor's own release notes
+(Step 4b).
 
 ## The pages to fetch
 
 | What | URL | Size | Notes |
 |---|---|---|---|
 | Newest 100 launches | `https://www.newsprint.com/launches.md` | about 20 KB | Weekly segments only. Covers about the last four weeks. |
-| One company | `https://www.newsprint.com/companies/<slug>.md` | 5 to 270 KB | Every dated item for that company, newest first. |
-| Company list | `https://www.newsprint.com/companies.md` | about 250 KB | Every company with a page, each linked to its `.md` page. Use it to find a slug. |
+| One company | `https://www.newsprint.com/companies/<slug>.md` | 1 to about 85 KB | Every dated item for that company, newest first. |
+| Company list | `https://www.newsprint.com/companies.md` | about 250 KB | The companies with the most sourced facts, each linked to its `.md` page. Not every company: use `data/companies.json` (below) for the rest. |
 | Weekly issue | `https://www.newsprint.com/updates/pr-software.md` | about 3 KB | "PR software this week", with a link to each issue. |
 
 ### `launches.md` line format
@@ -54,8 +56,9 @@ release notes (Step 4b).
 - [Muck Rack: Byline Notifications and Review Articles for journalists](https://www.newsprint.com/launches/LJ5Y8SBHR/): Available Nov. 9, 2026. Feature.
 ```
 
-The company name is the text before the first colon inside the brackets. The
-date follows "Available" (it shipped) or "Announced" (not yet out).
+Read only the lines under `## Newest launches`. The company name is the text
+before the first colon inside the brackets. The date follows "Available" (it
+shipped) or "Announced" (not yet out).
 
 ### `companies/<slug>.md` format
 
@@ -92,17 +95,17 @@ that name; search `companies.md` before you write "none".
 For agents that prefer JSON. Same content, larger files.
 
 - `https://www.newsprint.com/companies/<slug>.json`: one company. `launches`
-  holds the weekly record; `timeline` holds segment events; `company.update_channels`
-  lists the vendor's own changelog and blog pages when known.
+  holds the launch record; `timeline` holds segment events;
+  `company.update_channels` lists the vendor's own changelog and blog pages,
+  for the few companies where Newsprint knows them.
 - `https://www.newsprint.com/data/launches.json`: every confirmed launch
   (about 3.4 MB). Each launch has `company`, `title`, `announced_on`,
   `available_on`, `recorded_on` and `sources`.
 - `https://www.newsprint.com/data/companies.json`: every company tracked
-  (about 3.1 MB), with names and aliases.
+  (about 3.1 MB), with `name`, `slug` and `aliases`. Every company here has a
+  page at `/companies/<slug>.md`, including those `companies.md` leaves out.
 - `https://www.newsprint.com/launches/feed.xml`: an Atom feed of the newest
   100 launches.
-- PR software only: `https://api.newsprint.com/api/map/companies?q=<name>`
-  finds a company by name, alias or slug (no key, 120 requests a minute).
 
-Never send the user's tool list, name or usage to any of these. A search by
-name (`?q=`) sends that name; prefer `companies.md` to find a slug.
+Never send the user's tool list, name or usage to any of these. Use no query
+strings: every page above is a plain address.
