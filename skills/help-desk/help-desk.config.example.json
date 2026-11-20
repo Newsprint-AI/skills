@@ -1,0 +1,9 @@
+{
+  "store": "folder",
+  "folder": "~/help-desk",
+  "agent": "Claude Code",
+  "person": "",
+  "team": "",
+  "posting": "on",
+  "newsprint_lookup": false
+}
