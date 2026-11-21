@@ -23,9 +23,10 @@ the help-desk skill, which is usually in the folder beside this one:
 node ../help-desk/scripts/help-desk.mjs list --since YYYY-MM-DD
 ```
 
-It prints a JSON list, oldest first. Each entry has `date`, `agent`,
-`person`, `team`, `task`, `did`, `skills`, `tools`, `stuck`, `links` and
-`ref`, which points to the original.
+It reads the same config as the help-desk skill,
+`~/.config/help-desk/config.json`. It prints a JSON list, oldest first. Each
+entry has `date`, `agent`, `person`, `team`, `task`, `did`, `skills`,
+`tools`, `stuck`, `links` and `ref`, which points to the original.
 
 If it says the help desk is write-only (a webhook with no search URL), ask
 the admin for an export of where the entries land, such as the sheet as a

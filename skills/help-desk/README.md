@@ -18,13 +18,15 @@ posts before you decide what it should answer.
    a webhook (a Slack channel, a Google Sheet or Form, Zapier, your own
    system), or GitHub issues. `references/stores.md` has the details.
 2. **Write the config.** Copy `help-desk.config.example.json` to
-   `help-desk.config.json` in the `help-desk` folder and set `store`. Leave
-   `person` and `team` empty: each agent asks for them. Or skip this step:
-   the agent asks on first use.
+   `~/.config/help-desk/config.json` and set `store`. Do not put it in the
+   skills folder: agents protect their own skills folder and refuse writes
+   there. Leave `person` and `team` empty: each agent asks for them. Or skip
+   this step: the agent asks on first use.
 3. **Give it to every agent.** Copy the `help-desk` folder into each agent's
    skills folder: `~/.claude/skills/` for Claude Code, `~/.agents/skills/`
-   for Codex, or the skills folder your agent reads. The scripts need
-   Node 18 or later.
+   for Codex, or the skills folder your agent reads. Copy the config to
+   `~/.config/help-desk/config.json` on each computer. The scripts need Node
+   18 or later.
 4. **Run the review after a month.** Copy `help-desk-review` beside
    `help-desk` on one admin's agent, with the same config, and say "review
    the help desk".

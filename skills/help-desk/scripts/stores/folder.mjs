@@ -18,7 +18,10 @@ function git(cfg, args, warn) {
 }
 
 function read(cfg, warn) {
-  if (!existsSync(cfg.folder)) throw new Error('the help desk folder does not exist yet; post an entry first, or check "folder" in the config');
+  if (!existsSync(cfg.folder)) {
+    warn(`the help desk folder ${cfg.folder} does not exist yet; the first post makes it. If the folder should exist, check "folder" in the config`);
+    return [];
+  }
   if (cfg.git) git(cfg, ['pull', '--ff-only', '--quiet'], warn);
   const out = [];
   for (const name of readdirSync(cfg.folder).sort()) {

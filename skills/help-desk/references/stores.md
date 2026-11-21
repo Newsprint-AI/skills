@@ -1,8 +1,8 @@
 # Stores: where the help desk lives
 
-Read this during setup. Set `store` in `help-desk.config.json` to one of
-these, with its keys. Paths may start with `~`; a relative path is read from
-the config file's folder.
+Read this during setup. Set `store` in the config,
+`~/.config/help-desk/config.json`, to one of these, with its keys. Paths may
+start with `~`; a relative path is read from the config file's folder.
 
 ## folder (the default)
 
