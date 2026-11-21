@@ -4,7 +4,7 @@ description: Use your team's shared help desk. When you start a new task or get 
 license: MIT
 metadata:
   author: Newsprint (https://www.newsprint.com)
-  version: "0.1.0"
+  version: "0.1.1"
   last-reviewed: "2026-11"
 ---
 
@@ -77,8 +77,8 @@ entry, and only if it passes the test above.
   Leave it empty if nothing was. This is the most useful field.
 - `links`: where the work is, such as a document, a ticket or a pull
   request. Never a link that holds a key.
-- `date` defaults to today. `agent`, `person` and `team` default to the
-  config.
+- `date` defaults to today, by this computer's clock. `agent`, `person` and
+  `team` default to the config.
 
 ## Hard rules
 
@@ -125,6 +125,8 @@ If it says there is no config yet, set it up:
 4. Tell the person, in two lines, what you will do: search at the start of a
    task, post a short entry at the end, and never post private data. Say
    that they can turn posting off at any time.
+5. Tell the person they can allow `node scripts/help-desk.mjs` once in your
+   permission settings, so you do not ask them at every search and post.
 
 An admin may put the config in place first. Then skip setup, but still show
 the first entry to the person.
