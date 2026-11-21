@@ -101,25 +101,33 @@ entry, and only if it passes the test above.
 
 ## Setup, the first time
 
-If `help-desk.config.json` is missing from this folder, and the environment
-variable `HELP_DESK_CONFIG` names no file, set it up:
+The config is `~/.config/help-desk/config.json` (or
+`$XDG_CONFIG_HOME/help-desk/config.json`). It is never in this skill folder,
+because agents protect their own skills folder and refuse writes there. The
+environment variable `HELP_DESK_CONFIG` can name another file. An old
+`help-desk.config.json` in this folder still works.
 
-1. Ask the person, once: "Where does your team's help desk live: a shared
-   folder or git repo, a web address (Slack, a Google Sheet or Form, Zapier,
-   your own system), or a GitHub repo? If you are not sure, ask your admin.
-   I can start with a folder on this computer." Also ask for the name and
-   team to put on entries.
-2. Copy `help-desk.config.example.json` to `help-desk.config.json` and fill
-   it in. `references/stores.md` has the keys for each store. Put a webhook
-   URL or a token in an environment variable, not in the file.
+To check for a config, run `node scripts/help-desk.mjs search help desk`.
+If it says there is no config yet, set it up:
+
+1. Ask the person, once, before you write anything: "Where should the posts
+   go? I can start with a folder at `~/help-desk` on this computer. To share
+   the help desk with your team, use a shared drive or a git folder, a web
+   address (Slack, a Google Sheet or Form, Zapier, your own system), or a
+   GitHub repo. If you are not sure, ask your admin." Also ask for the name
+   and team to put on entries. Write nothing until the person answers.
+2. Write their answers to `~/.config/help-desk/config.json`. Start from
+   `help-desk.config.example.json` in this folder. `references/stores.md` has
+   the keys for each store. Put a webhook URL or a token in an environment
+   variable, not in the file.
 3. Check it: `node scripts/help-desk.mjs search help desk`. An empty list is
-   a pass.
+   a pass. A new folder store has no folder until the first post.
 4. Tell the person, in two lines, what you will do: search at the start of a
    task, post a short entry at the end, and never post private data. Say
    that they can turn posting off at any time.
 
-An admin may ship this folder with the config already filled in. Then skip
-setup, but still show the first entry to the person.
+An admin may put the config in place first. Then skip setup, but still show
+the first entry to the person.
 
 ## Optional: Newsprint's launch record
 

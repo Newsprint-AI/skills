@@ -5,7 +5,9 @@
 //   node scripts/help-desk.mjs search <words...>
 //   node scripts/help-desk.mjs list --since YYYY-MM-DD
 //
-// The config is help-desk.config.json in this skill's folder, or the file HELP_DESK_CONFIG names.
+// The config is the file HELP_DESK_CONFIG names, else ~/.config/help-desk/config.json (or $XDG_CONFIG_HOME/help-desk/),
+// else help-desk.config.json in this skill's folder (the old place). It lives outside the skill folder because
+// agents protect their own skills folder from writes.
 // search and list print a JSON list of entries; post prints {"posted": true, "ref": ...}. Notes go to stderr.
 // Every failure is one line on stderr starting "help-desk:", with exit code 1 (2 for a usage error).
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -21,11 +23,27 @@ const USAGE = 'usage: help-desk.mjs post <entry.json> [--approved] | search <wor
 class Usage extends Error {}
 const warn = (msg) => process.stderr.write(`help-desk: ${msg}\n`);
 
-const configPath = () => process.env.HELP_DESK_CONFIG || join(HERE, '..', 'help-desk.config.json');
+// The user config file: $XDG_CONFIG_HOME/help-desk/config.json when XDG_CONFIG_HOME is absolute, else ~/.config/help-desk/config.json.
+const userConfig = () => {
+  const xdg = process.env.XDG_CONFIG_HOME;
+  return join(xdg && isAbsolute(xdg) ? xdg : join(homedir(), '.config'), 'help-desk', 'config.json');
+};
+
+function configPath() {
+  const named = process.env.HELP_DESK_CONFIG;
+  if (named) {
+    if (!existsSync(named)) throw new Error(`no config at ${named}, the file HELP_DESK_CONFIG names; create it, or unset HELP_DESK_CONFIG and follow "Setup" in SKILL.md`);
+    return named;
+  }
+  const user = userConfig();
+  if (existsSync(user)) return user;
+  const legacy = join(HERE, '..', 'help-desk.config.json');
+  if (existsSync(legacy)) return legacy;
+  throw new Error(`no config yet. Create ${user}; follow "Setup" in SKILL.md`);
+}
 
 function loadConfig() {
   const file = configPath();
-  if (!existsSync(file)) throw new Error(`no config at ${file}; follow "Setup" in SKILL.md to write one`);
   let cfg;
   try {
     cfg = JSON.parse(readFileSync(file, 'utf8'));
