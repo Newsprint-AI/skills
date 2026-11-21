@@ -20,7 +20,12 @@ const EMAIL = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/;
 
 export class EntryError extends Error {}
 
-const today = () => new Date().toISOString().slice(0, 10);
+/** The day of `d` on this computer's clock, as YYYY-MM-DD: an entry posted in the afternoon is dated that day, not by UTC. */
+export function localDay(d = new Date()) {
+  const pad = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}
+const today = () => localDay();
 
 /** The entry with defaults filled in, or an EntryError naming the first problem. Never echoes a matched secret. */
 export function checkEntry(raw, defaults = {}) {

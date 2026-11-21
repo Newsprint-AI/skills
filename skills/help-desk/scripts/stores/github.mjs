@@ -1,6 +1,6 @@
 // The github store: one issue per entry in one repo, through the gh CLI (its own login; this script holds no token).
 import { execFileSync } from 'node:child_process';
-import { toMarkdown } from '../entry.mjs';
+import { localDay, toMarkdown } from '../entry.mjs';
 
 const MARK = 'help-desk-entry:';
 const FIELDS = 'number,title,body,url,createdAt';
@@ -46,7 +46,9 @@ export function fromIssue(issue) {
       // fall through to the plain issue
     }
   }
-  return { date: String(issue.createdAt).slice(0, 10), task: issue.title, did: issue.body || '', ref: issue.url };
+  const created = new Date(issue.createdAt);
+  const date = Number.isNaN(created.getTime()) ? String(issue.createdAt).slice(0, 10) : localDay(created);
+  return { date, task: issue.title, did: issue.body || '', ref: issue.url };
 }
 
 function gh(args) {
