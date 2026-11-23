@@ -4,7 +4,7 @@ description: Write or fix a press release or announcement. Gets the facts first,
 license: MIT
 metadata:
   author: Newsprint (https://www.newsprint.com)
-  version: "2.2.0"
+  version: "2.3.0"
   last-reviewed: "2026-11"
   origin: Write Release, the free press release writer Newsprint ran from 2023 to 2026
 ---
@@ -179,14 +179,19 @@ draft cannot go out until the brackets are filled.
 
 ## Step 4: Write it, then hand it back
 
-You know how to write a good release. Hold to three things:
+You know how to write a good release. Hold to four things:
 
+- **News first:** the first sentence after the dateline states the news: who
+  did what. Name the company and what it launched, raised, hired, found or
+  announced, and when, if the date matters. Context, the problem, a trend or a
+  scene come after that sentence, never before it, even when the user asks to
+  lead with the problem. Their focus then goes right after the news.
 - **Facts:** use only what Steps 2 and 3 allow.
 - **Tone:** the tone the user asked for (question 13). If they did not say,
   match their past releases. If there are none, write plain, direct news style.
-  Put their focus and key messages (question 14) first, as far as the facts and
-  the speakers' views support them. A key message is not a fact: never state
-  one that the facts do not back.
+  Put their focus and key messages (question 14) right after the news, as far
+  as the facts and the speakers' views support them. A key message is not a
+  fact: never state one that the facts do not back.
 - **No stock phrases**, in the text or in any quote: no one is "excited",
   "thrilled", "pleased" or "proud" to announce anything, and nothing is
   "leading", "innovative", "cutting-edge", "game-changing", "seamless",
@@ -263,8 +268,9 @@ Do not start over or interview first. Edit as a wire editor would, under Steps
 2 and 3. Keep the user's facts, and a speaker's words when they are specific.
 Cut puffed claims and repetition, or turn a claim into an evidence request.
 Bracket a missing core part: the news, why it matters, the dateline, or the
-contact. If a quote is made of stock phrases ("delighted to partner"), draft two
-or three better options from what the release says the speaker thinks, and mark
+contact. If the first sentence is not the news, rewrite it so it is. If a
+quote is made of stock phrases ("delighted to partner"), draft two or three
+better options from what the release says the speaker thinks, and mark
 them for the speaker's approval.
 
 Return the three changes that matter most, one line each. Then **Before you
